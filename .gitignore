@@ -28,6 +28,8 @@ Thumbs.db
 tmp/
 temp/
 *.tmp
+revision_barriers_next_phase_roadmap_pack.zip
+next_phase_roadmap_pack_unpacked/
 
 # LaTeX build artifacts
 texput.log
@@ -46,6 +48,13 @@ paper/*.lot
 paper/*.fls
 paper/*.fdb_latexmk
 paper/*.synctex.gz
+
+# Local Paper 2 / next-phase exploration artifacts
+outputs/next_phase/
+configs/m9_qwen_mhst_patch_scan.yaml
+scripts/run_patch_scan.py
+src/analysis/patching.py
+src/models/patch_hooks.py
 
 # Misc archives and patch leftovers created locally
 *.bak
