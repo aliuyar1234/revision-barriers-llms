@@ -1,0 +1,18 @@
+inputs:
+  state_manifest_json: outputs/states/E4r1__qwen25_7b__mhst__state_manifest__seed0.json
+  state_rows_jsonl: outputs/states/E4r1__qwen25_7b__mhst__state_rows__seed0.jsonl
+run:
+  run_id: E4r1__qwen25_7b__mhst__probe__seed0
+  c_grid: [0.01, 0.1, 1.0, 10.0]
+  bootstrap_resamples: 1000
+  bootstrap_seed: 0
+  label_shuffle_count: 20
+  label_shuffle_seed: 0
+  output_margin_min_per_history_type: 25
+outputs:
+  layer_metrics_csv: outputs/probes/E4r1__qwen25_7b__mhst__layer_metrics__seed0.csv
+  baseline_metrics_json: outputs/probes/E4r1__qwen25_7b__mhst__baseline_metrics__seed0.json
+  selected_probe_json: outputs/probes/E4r1__qwen25_7b__mhst__selected_probe__seed0.json
+  score_rows_jsonl: outputs/probes/E4r1__qwen25_7b__mhst__score_rows__seed0.jsonl
+  layer_plot_png: outputs/probes/E4r1__qwen25_7b__mhst__layer_auroc__seed0.png
+  calibration_plot_png: outputs/probes/E4r1__qwen25_7b__mhst__calibration__seed0.png

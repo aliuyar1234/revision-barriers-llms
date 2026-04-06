@@ -1,0 +1,17 @@
+seed: 0
+cells:
+  margins: [1, 2, 3]
+  history_depths: [0, 1, 2]
+splits:
+  train: 100
+  dev: 25
+  test: 25
+sanity:
+  split: dev
+  count_per_rule_pair: 5
+outputs:
+  pair_jsonl: outputs/behavior/E0__rcicl__pairs__all__seed0.jsonl
+  sanity_jsonl: outputs/behavior/E0__rcicl__sanity__all__seed0.jsonl
+  invariant_report_json: outputs/behavior/E0__rcicl__invariants__seed0.json
+  sample_prompts_json: outputs/behavior/E0__rcicl__sample_prompts__seed0.json
+  sample_prompt_count: 3

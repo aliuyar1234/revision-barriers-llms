@@ -1,0 +1,62 @@
+\documentclass[10pt]{article}
+\usepackage[preprint]{tmlr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,array,multirow,makecell,threeparttable}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[most]{tcolorbox}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{nicefrac}
+
+\captionsetup{font=small,labelfont=bf}
+\setlist[itemize]{leftmargin=1.5em}
+\setlist[enumerate]{leftmargin=1.6em}
+
+\definecolor{fresh}{HTML}{2166AC}
+\definecolor{committed}{HTML}{D95F02}
+\definecolor{residual}{HTML}{2A9D8F}
+\definecolor{softblue}{HTML}{EAF2FB}
+\definecolor{softorange}{HTML}{FBE9DD}
+\definecolor{softgray}{HTML}{F2F4F7}
+\definecolor{softgreen}{HTML}{E7F5F2}
+\definecolor{textgray}{HTML}{333333}
+
+\newcommand{\Braw}{B_{\mathrm{raw}}}
+\newcommand{\Bcap}{B_{\mathrm{cap}}}
+\newcommand{\DeltaBpair}{\Delta B_{\mathrm{pair}}^{\mathrm{cap}}}
+\newcommand{\MeanFlip}{\bar{F}}
+\newcommand{\DeltaMeanFlip}{\Delta \bar{F}_{\mathrm{pair}}}
+\newcommand{\Slead}{S_{\mathrm{lead}}}
+\newcommand{\validpair}{\mathrm{valid\_pair\_main}}
+\newcommand{\oprefix}{o_{\mathrm{prefix}}}
+
+\title{Revision Barriers in Language Models under Conflicting Evidence}
+\author{\name Ali Uyar \\ \addr Independent Researcher}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Most evaluations measure what a language model currently prefers, not how revisable that preference remains under later conflicting evidence. We introduce a matched-history construction that holds designated incumbent/challenger state and evidence margin fixed while varying the path by which that state was reached. On MHST with Qwen2.5-7B, committed histories are substantially harder to reverse than fresh histories: on held-out paired-valid test pairs, the mean paired barrier gap is 2.78 (95\% CI 2.38--3.19), the leader-consistent subset remains same-sign at 1.85 (1.41--2.30), the required $k{=}0$ cell is exactly null, and an output-margin control stays same-sign. A companion full-curve summary from mean flipability over doses tells the same story. A simple state-only predictor built from designated margin and prefix-only output margin still underpredicts the paired history effect, leaving a positive residual paired gap overall and on the leader-consistent subset. By contrast, a prefix-boundary linear probe does not outperform a prefix-only output-margin baseline overall, and a locked one-site steering test does not yield a qualifying barrier-moving effect, even after a principled boundary-alignment rerun. These results support revision barriers as a behavioral diagnostic of history-sensitive revisability under conflict, while placing clear limits on current latent and causal interpretations.
+\end{abstract}
+
+\input{sections/01_intro}
+\input{sections/02_method}
+\input{sections/03_behavior}
+\input{sections/04_state_only}
+\input{sections/05_internal_limits}
+\input{sections/06_scope_discussion}
+
+\appendix
+\input{appendix/appendix_a}
+
+\end{document}

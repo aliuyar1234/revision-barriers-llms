@@ -1,0 +1,15 @@
+model:
+  backend: hf_causal_lm
+  model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+  device: auto
+  dtype: auto
+  local_files_only: true
+inputs:
+  pair_jsonl: outputs/behavior/E0__mhst__pairs__all__seed0.jsonl
+  sanity_jsonl: outputs/behavior/E0__mhst__sanity__all__seed0.jsonl
+run:
+  pair_prefix_limit: 48
+outputs:
+  pair_prefix_scores_jsonl: outputs/behavior/E0__qwen25_7b__mhst__prefix_scores__seed0.jsonl
+  sanity_scores_jsonl: outputs/behavior/E0__qwen25_7b__mhst__sanity_scores__seed0.jsonl
+  sanity_summary_json: outputs/behavior/E0__qwen25_7b__mhst__sanity_summary__seed0.json

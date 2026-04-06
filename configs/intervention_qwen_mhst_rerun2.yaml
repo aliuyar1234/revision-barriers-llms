@@ -1,0 +1,33 @@
+model:
+  backend: hf_causal_lm
+  model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+  device: auto
+  dtype: auto
+  local_files_only: true
+inputs:
+  pair_jsonl: outputs/behavior/E0__mhst__pairs__all__seed0.jsonl
+  sanity_jsonl: outputs/behavior/E0__mhst__sanity__all__seed0.jsonl
+  behavior_rows_jsonl: outputs/behavior/m4_qwen_behavior/E4prep__qwen25_7b__mhst__rows__seed0.jsonl
+  behavior_pairs_jsonl: outputs/behavior/m4_qwen_behavior/E4prep__qwen25_7b__mhst__pairs__seed0.jsonl
+  state_rows_jsonl: outputs/states/E4r1__qwen25_7b__mhst__state_rows__seed0.jsonl
+  selected_probe_json: outputs/probes/E4r1__qwen25_7b__mhst__selected_probe__seed0.json
+run:
+  run_id: E5r2__qwen25_7b__mhst__intervention__seed0
+  alpha_grid: [0.25, 0.5, 1.0, 2.0]
+  bootstrap_resamples: 1000
+  bootstrap_seed: 0
+  random_control_seed: 0
+  random_control_count: 5
+outputs:
+  rows_jsonl: outputs/interventions/E5r2__qwen25_7b__mhst__rows__seed0.jsonl
+  summary_json: outputs/interventions/E5r2__qwen25_7b__mhst__summary__seed0.json
+  controls_json: outputs/interventions/E5r2__qwen25_7b__mhst__controls__seed0.json
+  s_move_dev_json: outputs/interventions/E5r2__qwen25_7b__mhst__s_move_dev__seed0.json
+  s_move_test_json: outputs/interventions/E5r2__qwen25_7b__mhst__s_move_test__seed0.json
+  random_directions_npy: outputs/interventions/E5r2__qwen25_7b__mhst__random_dirs__seed0.npy
+  random_directions_json: outputs/interventions/E5r2__qwen25_7b__mhst__random_dirs__seed0.json
+  run_state_json: outputs/interventions/E5r2__qwen25_7b__mhst__run_state__seed0.json
+  heartbeat_json: outputs/interventions/E5r2__qwen25_7b__mhst__heartbeat__seed0.json
+  config_snapshot_yaml: outputs/interventions/E5r2__qwen25_7b__mhst__config__seed0.yaml
+  progress_log_txt: outputs/interventions/E5r2__qwen25_7b__mhst__progress__seed0.log
+  stop_flag_path: outputs/interventions/E5r2__qwen25_7b__mhst__STOP__seed0.flag

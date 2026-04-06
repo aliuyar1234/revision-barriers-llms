@@ -1,0 +1,21 @@
+model:
+  backend: hf_causal_lm
+  model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+  device: auto
+  dtype: auto
+  local_files_only: true
+inputs:
+  pair_jsonl: outputs/behavior/E0__mhst__pairs__all__seed0.jsonl
+  behavior_rows_jsonl: outputs/behavior/m4_qwen_behavior/E4prep__qwen25_7b__mhst__rows__seed0.jsonl
+run:
+  run_id: E4r1__qwen25_7b__mhst__states__seed0
+  include_splits: [train, dev, test]
+  include_margins: [1, 2, 3]
+  include_history_depths: [0, 1, 2]
+  batch_size: 4
+  storage_dtype: float16
+  seed: 0
+outputs:
+  state_array_npy: outputs/states/E4r1__qwen25_7b__mhst__states__seed0.npy
+  state_rows_jsonl: outputs/states/E4r1__qwen25_7b__mhst__state_rows__seed0.jsonl
+  state_manifest_json: outputs/states/E4r1__qwen25_7b__mhst__state_manifest__seed0.json

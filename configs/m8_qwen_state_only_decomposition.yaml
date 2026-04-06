@@ -1,0 +1,13 @@
+inputs:
+  row_jsonl: outputs/behavior/m4_qwen_behavior/E4prep__qwen25_7b__mhst__rows__seed0.jsonl
+  pair_jsonl: outputs/behavior/m4_qwen_behavior/E4prep__qwen25_7b__mhst__pairs__seed0.jsonl
+run:
+  run_id: E8__qwen25_7b__mhst__state_only_decomposition__seed0
+  fit_split: train
+  eval_split: test
+  bootstrap_resamples: 1000
+  bootstrap_seed: 0
+outputs:
+  summary_json: outputs/analysis/m8_qwen/E8__qwen25_7b__mhst__state_only_decomposition__seed0.json
+  summary_table_csv: paper/tables/table_4_state_only_decomposition.csv
+  summary_plot_png: paper/figures/figure_5_state_only_insufficiency.png

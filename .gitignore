@@ -1,0 +1,47 @@
+# Research outputs and workflow state
+outputs/
+.omx/
+.miktex-local/
+AGENTS.md
+docs/
+
+# Python caches and virtualenv-style clutter
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary or local scratch files
+.tmp*
+tmp/
+temp/
+*.tmp
+
+# LaTeX build artifacts
+texput.log
+paper/main.aux
+paper/main.log
+paper/main.out
+paper/main.pdf
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.lof
+paper/*.lot
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+
+# Misc archives and patch leftovers created locally
+*.bak
+*.orig

@@ -1,0 +1,18 @@
+\section{Introduction}
+
+Most evaluations of language models summarize current preference: which answer is leading, which option scores highest, or how large the current evidence margin appears to be. For systems that continue to receive evidence, that is incomplete. Two prefixes can leave a model in the same designated incumbent/challenger support state and with the same designated evidence margin, yet differ systematically in how much later challenger evidence is required to reverse that state. We study that difference as \emph{revisability}.
+
+Our central claim is behavioral rather than mechanistic: matching designated support state is not enough to match revisability. We test this with a matched-history construction that holds the designated incumbent/challenger pair and evidence margin fixed while varying the path by which that state was reached. The resulting asymmetry is summarized by a \emph{revision barrier}: the amount of late challenger evidence needed to flip the incumbent under locked canonical scoring. The main contribution of the paper is to show that this barrier is real and measurable on the primary MHST/Qwen setting, and that it survives a control ladder designed to rule out simpler order-effects readings.
+
+The paper has two main results. The first is a strong behavioral result on MHST/Qwen: committed histories are harder to reverse than fresh histories on held-out test pairs, the leader-consistent subset remains same-sign, the required $k{=}0$ cell is exactly null, and a companion full-curve summary together with an output-margin control tell the same story. The second is a state-only insufficiency result: a simple monotone predictor built from designated margin and prefix-only output margin still underpredicts the paired history effect. These two results are the center of gravity. The latent section is bounded, the one-site causal follow-up is negative under a locked protocol, and the scope evidence is auxiliary.
+
+This is therefore not a paper about anthropomorphic belief states, circuit localization, or a validated causal handle on commitment. We do not claim that the latent probe adds value beyond output margin overall, we do not claim that one-site steering supports causal manipulability of revisability, and we do not claim broad generalization beyond the main MHST/Qwen setting. Instead, we argue for a narrower but substantive conclusion: revision barriers are a useful behavioral diagnostic of history-sensitive revisability under controlled designated state.
+
+\paragraph{Contributions.}
+\begin{itemize}
+    \item We introduce a matched-history methodology for studying revisability while holding designated incumbent/challenger state and evidence margin fixed.
+    \item We establish a strong behavioral revision-barrier result on MHST/Qwen and show that it survives a deliberate control ladder.
+    \item We show that a simple state-only predictor built from designated margin and prefix-only output margin still underpredicts the paired history effect.
+    \item We document bounded internal follow-ups: a predictive prefix-boundary signal that does not beat output margin overall, and an honest negative one-site steering result.
+    \item We report limited auxiliary scope evidence from Llama MHST and RC-ICL without treating those settings as co-equal main results.
+\end{itemize}

@@ -1,0 +1,11 @@
+inputs:
+  pair_summary_jsonl: outputs/behavior/m3_qwen/E2__qwen25_7b__mhst__pairs__seed0.jsonl
+run:
+  model_label: qwen25_7b_mhst
+  split: test
+  bootstrap_resamples: 1000
+  bootstrap_seed: 0
+outputs:
+  summary_json: outputs/behavior/m7_qwen/E2__qwen25_7b__mhst__companion_mean_flip_summary__seed0.json
+  summary_table_csv: outputs/behavior/m7_qwen/E2__qwen25_7b__mhst__companion_mean_flip_table__seed0.csv
+  summary_plot_png: outputs/behavior/m7_qwen/E2__qwen25_7b__mhst__companion_mean_flip_plot__seed0.png

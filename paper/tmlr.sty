@@ -1,0 +1,142 @@
+%%%% Minimal TMLR-style macros for anonymized submission-like formatting.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tmlr}[2026/04/06 Minimal TMLR-like style]
+
+\RequirePackage{fancyhdr}
+\RequirePackage{natbib}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+
+\newif\if@accepted
+\@acceptedfalse
+\DeclareOption{accepted}{\@acceptedtrue}
+
+\newif\if@preprint
+\@preprintfalse
+\DeclareOption{preprint}{\@preprinttrue\@acceptedtrue}
+\DeclareOption*{\PackageWarning{tmlr}{Unknown '\CurrentOption'}}
+\ProcessOptions\relax
+
+\makeatletter
+
+\setcitestyle{authoryear,round,citesep={;},aysep={,},yysep={;}}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\oddsidemargin 0in
+\evensidemargin 0in
+\marginparwidth 0.07 true in
+\topmargin -0.625in
+\addtolength{\headsep}{0.25in}
+\textheight 9.0 true in
+\textwidth 6.5 true in
+
+\widowpenalty=10000
+\clubpenalty=10000
+\pagestyle{fancy}
+\flushbottom
+\sloppy
+\def\addcontentsline#1#2#3{}
+
+\fancyhf{}
+\if@accepted
+  \if@preprint
+    \lhead{}
+  \else
+    \lhead{Published in Transactions on Machine Learning Research (\month/\year)}
+  \fi
+\else
+  \lhead{Under review as submission to TMLR}
+\fi
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\newlength\aftertitskip
+\newlength\beforetitskip
+\newlength\interauthorskip
+\newlength\aftermaketitskip
+\setlength\aftertitskip{0.3in plus 0.2in minus 0.2in}
+\setlength\beforetitskip{0.05in plus 0.08in minus 0.08in}
+\setlength\interauthorskip{0.08in plus 0.1in minus 0.1in}
+\setlength\aftermaketitskip{0.3in plus 0.1in minus 0.1in}
+
+\def\@startauthor{\noindent \normalsize\bf}
+\def\@endauthor{}
+\def\addr{\small\it}
+\def\email{\hfill\small\it}
+\def\name{\normalsize\bf}
+\def\AND{\@endauthor\rm\hss \vskip \interauthorskip \@startauthor}
+\providecommand\month{MM}
+\providecommand\year{YYYY}
+\providecommand\openreview{}
+
+\def\maketitle{\par \begingroup
+  \def\thefootnote{\fnsymbol{footnote}}
+  \def\@makefnmark{\hbox to 0pt{$^{\@thefnmark}$\hss}}
+  \long\def\@makefntext##1{\parindent 1em\noindent
+    \hbox to1.8em{\hss $\m@th ^{\@thefnmark}$}##1}
+  \@maketitle \@thanks
+\endgroup
+\setcounter{footnote}{0}
+\let\maketitle\relax
+\let\@maketitle\relax
+\gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
+
+\def\toptitlebar{\hrule height4pt\vskip .25in\vskip-\parskip}
+\def\bottomtitlebar{\vskip .29in\vskip-\parskip\hrule height1pt\vskip .09in}
+
+\def\@maketitle{\vbox{\hsize\textwidth
+  \vskip 0.1in
+  \toptitlebar
+  \centering{\LARGE\bf\sffamily \@title\par}
+  \vskip \aftertitskip
+  \if@accepted
+    \if@preprint
+      \@startauthor \@author \@endauthor
+    \else
+      \@startauthor \@author \\ \\ {\bf Reviewed on OpenReview:} \openreview \@endauthor
+    \fi
+  \else
+    \@startauthor Anonymous authors\\Paper under double-blind review \@endauthor
+  \fi
+  \vskip 0.3in minus 0.1in
+}}
+
+\renewenvironment{abstract}{
+  \vskip.075in\centerline{\large\bf\sffamily Abstract}\vspace{0.5ex}\begin{quote}
+}{\par\end{quote}\vskip 1ex}
+
+\def\section{\@startsection{section}{1}{\z@}{-2.0ex plus -0.5ex minus -.2ex}{1.5ex plus 0.3ex minus 0.2ex}{\large\bf\raggedright\sffamily}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{-1.8ex plus -0.5ex minus -.2ex}{0.8ex plus .2ex}{\normalsize\bf\raggedright\sffamily}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{-1.5ex plus -0.5ex minus -.2ex}{0.5ex plus .2ex}{\normalsize\bf\raggedright\sffamily}}
+\def\paragraph{\@startsection{paragraph}{4}{\z@}{1.5ex plus 0.5ex minus .2ex}{-1em}{\normalsize\bf}}
+
+\footnotesep 6.65pt
+\def\footnoterule{\kern-3pt \hrule width 12pc \kern 2.6pt }
+\setcounter{footnote}{0}
+
+\parindent 0pt
+\topsep 4pt plus 1pt minus 2pt
+\partopsep 1pt plus 0.5pt minus 0.5pt
+\itemsep 2pt plus 1pt minus 0.5pt
+\parsep 2pt plus 1pt minus 0.5pt
+\parskip .5pc
+\leftmargin3pc
+\leftmargini\leftmargin
+\leftmarginii 2em
+\leftmarginiii 1.5em
+\leftmarginiv 1.0em
+\leftmarginv .5em
+\labelsep 5pt
+\def\@listi{\leftmargin\leftmargini}
+\def\@listii{\leftmargin\leftmarginii\labelwidth\leftmarginii\advance\labelwidth-\labelsep\topsep 2pt plus 1pt minus 0.5pt\parsep 1pt plus 0.5pt minus 0.5pt\itemsep \parsep}
+\def\@listiii{\leftmargin\leftmarginiii\labelwidth\leftmarginiii\advance\labelwidth-\labelsep\topsep 1pt plus 0.5pt minus 0.5pt\parsep \z@\partopsep 0.5pt plus 0pt minus 0.5pt\itemsep \topsep}
+
+\abovedisplayskip 7pt plus 2pt minus 5pt
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip 0pt plus 3pt
+\belowdisplayshortskip 4pt plus 3pt minus 3pt
+
+\makeatother

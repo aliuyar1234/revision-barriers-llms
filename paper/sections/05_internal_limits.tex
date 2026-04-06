@@ -1,0 +1,36 @@
+\section{Limits of internal explanations}
+
+The next two follow-ups are intentionally bounded. Their role is not to rescue the paper with a stronger mechanistic story, but to document how far the current internal explanations do and do not go.
+
+\subsection{Prefix-boundary signal}
+
+The latent follow-up is informative but secondary. On the original M4 run, the selected prefix-boundary linear probe at layer 24 reached held-out AUROC $0.7921$, clearly exceeding the designated-margin baseline $m$ but falling below both the prefix-only output-margin baseline ($0.8701$) and the combined $[m,\oprefix]$ baseline ($0.8689$). A later boundary-alignment rerun sharpened that conclusion rather than rescuing it: the selected layer changed from 24 to 21 and AUROC rose slightly to $0.8046$, but the probe still lost to both $\oprefix$ and $[m,\oprefix]$ overall. The safe interpretation is therefore narrow: prefix-boundary state contains predictive signal for later revisability beyond designated margin $m$, but not beyond output margin overall.
+
+\subsection{One-site causal follow-up}
+
+The causal lane is an honest negative result. Under the locked one-site steering protocol, the original M5 run selected no nonzero alpha and was therefore unsupported by the project's own rule set. A narrow rerun was justified because an audit found a real extraction/scoring boundary mismatch at the intervention site. That rerun fixed the mismatch, changed the selected latent layer from 24 to 21, and left the full scoring semantics unchanged, so it was a real narrow repair rather than a redesign. But the outcome remained unchanged: on both the original run and the boundary-aligned rerun, every dev example in the movable subset remained row-level flat at every tested signed alpha, no nonzero alpha qualified, and the held-out test steering stage was never entered. Under the locked protocol, C4 is therefore unsupported.
+
+
+
+\begin{table}[t]
+    \centering
+    \scriptsize
+    \begin{threeparttable}
+    \caption{Bounded internal follow-ups. The latent readout is predictive beyond designated margin but not beyond output margin overall; the one-site steering lane remains unsupported under the locked protocol, including after the boundary-alignment rerun.}
+    \label{tab:internal-limits}
+    \renewcommand{\arraystretch}{1.08}
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.24\linewidth} c >{\raggedright\arraybackslash}p{0.16\linewidth} >{\raggedright\arraybackslash}p{0.30\linewidth} >{\raggedright\arraybackslash}p{0.17\linewidth}}
+        \toprule
+        Follow-up & Layer & Key metric & Comparator & Outcome \\
+        \midrule
+        \makecell[l]{Original\\M4 probe} & 24 & AUROC 0.7921 & \makecell[l]{$\Delta$ vs $\oprefix = -0.0780$;\\$\Delta$ vs $[m,\oprefix] = -0.0768$} & \makecell[l]{Predictive\\beyond $m$ only} \\
+        \makecell[l]{Boundary-aligned\\M4 rerun} & 21 & AUROC 0.8046 & \makecell[l]{$\Delta$ vs $\oprefix = -0.0655$;\\$\Delta$ vs $[m,\oprefix] = -0.0643$} & \makecell[l]{Conclusion\\unchanged} \\
+        \makecell[l]{Original\\M5 steering} & 24 & \makecell[l]{no nonzero\\alpha selected} & \makecell[l]{all tested dev shifts flat;\\side effects negligible} & Unsupported \\
+        \makecell[l]{Boundary-aligned\\M5 rerun} & 21 & \makecell[l]{no nonzero\\alpha selected} & \makecell[l]{rerun remained row-level\\flat on dev} & Unsupported \\
+        \bottomrule
+    \end{tabularx}
+    \end{threeparttable}
+\end{table}
+
+These negative or limited internal results do not make the paper incomplete. They do something more useful: they show that the behavioral effect currently outruns the available internal explanation. This is why the internal material belongs here as a trust-building limits section rather than as a rescue lane.

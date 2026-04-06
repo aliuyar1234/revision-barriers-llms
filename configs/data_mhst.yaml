@@ -1,0 +1,19 @@
+seed: 0
+cells:
+  margins: [1, 2, 3]
+  history_depths: [0, 1, 2]
+splits:
+  train: 200
+  dev: 50
+  test: 50
+sanity:
+  split: dev
+  count_per_label: 30
+  m: 3
+  k: 0
+outputs:
+  pair_jsonl: outputs/behavior/E0__mhst__pairs__all__seed0.jsonl
+  sanity_jsonl: outputs/behavior/E0__mhst__sanity__all__seed0.jsonl
+  invariant_report_json: outputs/behavior/E0__mhst__invariants__seed0.json
+  sample_prompts_json: outputs/behavior/E0__mhst__sample_prompts__seed0.json
+  sample_prompt_count: 3

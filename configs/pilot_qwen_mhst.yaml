@@ -1,0 +1,22 @@
+model:
+  backend: hf_causal_lm
+  model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+  device: auto
+  dtype: auto
+  local_files_only: true
+inputs:
+  pair_jsonl: outputs/behavior/E0__mhst__pairs__all__seed0.jsonl
+  sanity_jsonl: outputs/behavior/E0__mhst__sanity__all__seed0.jsonl
+run:
+  mode: m2_pilot
+  include_splits: [dev]
+  include_margins: [2]
+  include_history_depths: [0, 2]
+outputs:
+  scored_rows_jsonl: outputs/behavior/m2_pilot/E1__qwen25_7b__mhst__dev_rows__seed0.jsonl
+  pair_summary_jsonl: outputs/behavior/m2_pilot/E1__qwen25_7b__mhst__dev_pairs__seed0.jsonl
+  inspection_pairs_jsonl: outputs/behavior/m2_pilot/inspection_pairs.jsonl
+  summary_json: outputs/behavior/m2_pilot/E1__qwen25_7b__mhst__summary__seed0.json
+  sanity_summary_json: outputs/behavior/m2_pilot/E1__qwen25_7b__mhst__sanity_summary__seed0.json
+  overall_plot_png: outputs/behavior/m2_pilot/E1__qwen25_7b__mhst__reversibility_overall__seed0.png
+  plot_png_by_k: outputs/behavior/m2_pilot/E1__qwen25_7b__mhst__reversibility_k{k}__seed0.png

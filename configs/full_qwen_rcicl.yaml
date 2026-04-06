@@ -1,0 +1,39 @@
+model:
+  backend: hf_causal_lm
+  model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+  device: auto
+  dtype: auto
+  local_files_only: true
+inputs:
+  pair_jsonl: outputs/behavior/E0__rcicl__pairs__all__seed0.jsonl
+  sanity_jsonl: outputs/behavior/E0__rcicl__sanity__all__seed0.jsonl
+run:
+  mode: m3_full
+  model_label: qwen25_7b_rcicl
+  include_splits: [dev, test]
+  include_margins: [1, 2, 3]
+  include_history_depths: [0, 1, 2]
+  output_margin_control: false
+  bootstrap_seed: 0
+  sanity_overall_threshold: 0.95
+  sanity_per_label_threshold:
+  headline_split: test
+execution:
+  allow_resume: true
+  progress_every_rows: 10
+  heartbeat_seconds: 30
+outputs:
+  scored_rows_jsonl: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__rows__seed0.jsonl
+  scored_rows_partial_jsonl: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__rows_partial__seed0.jsonl
+  pair_summary_jsonl: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__pairs__seed0.jsonl
+  summary_json: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__summary__seed0.json
+  sanity_summary_json: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__sanity_summary__seed0.json
+  summary_table_csv: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__summary_table__seed0.csv
+  overall_plot_png: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__reversibility_overall_test__seed0.png
+  plot_png_by_k: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__reversibility_k{k}_test__seed0.png
+  cell_heatmap_png: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__cell_heatmap_test__seed0.png
+  run_state_json: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__run_state__seed0.json
+  heartbeat_json: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__heartbeat__seed0.json
+  config_snapshot_yaml: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__config__seed0.yaml
+  progress_log_txt: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__progress__seed0.log
+  stop_flag_path: outputs/behavior/m6_qwen_rcicl/E6__qwen25_7b__rcicl__STOP__seed0.flag
