@@ -1,0 +1,410 @@
+{
+  "config": "E:\\Research\\revision_barriers_build_pack_clarified\\configs\\probe_qwen_mhst.yaml",
+  "run_id": "E4__qwen25_7b__mhst__probe__seed0",
+  "d0_selection": {
+    "d0": 3,
+    "dev_positive_rate": 0.5295404814004376,
+    "candidate_rates": {
+      "3": 0.5295404814004376
+    },
+    "used_fallback": false
+  },
+  "split_counts_valid_main": {
+    "dev": 457,
+    "train": 1902,
+    "test": 456
+  },
+  "baselines": {
+    "m": {
+      "feature_names": [
+        "m"
+      ],
+      "selected_C": 0.01,
+      "dev_auroc": 0.5570632327503363,
+      "dev_auprc": 0.5592399181210259,
+      "test_auroc": 0.5705339105339104,
+      "test_auprc": 0.5506945226870039,
+      "candidates": [
+        {
+          "C": 0.01,
+          "dev_auroc": 0.5570632327503363,
+          "dev_auprc": 0.5592399181210259
+        },
+        {
+          "C": 0.1,
+          "dev_auroc": 0.5570632327503363,
+          "dev_auprc": 0.5592399181210259
+        },
+        {
+          "C": 1.0,
+          "dev_auroc": 0.5570632327503363,
+          "dev_auprc": 0.5592399181210259
+        },
+        {
+          "C": 10.0,
+          "dev_auroc": 0.5570632327503363,
+          "dev_auprc": 0.5592399181210259
+        }
+      ]
+    },
+    "o": {
+      "feature_names": [
+        "o"
+      ],
+      "selected_C": 0.01,
+      "dev_auroc": 0.8717662886796079,
+      "dev_auprc": 0.8172553850537803,
+      "test_auroc": 0.8700913900913901,
+      "test_auprc": 0.8377275987975932,
+      "candidates": [
+        {
+          "C": 0.01,
+          "dev_auroc": 0.8717662886796079,
+          "dev_auprc": 0.8172553850537803
+        },
+        {
+          "C": 0.1,
+          "dev_auroc": 0.8717662886796079,
+          "dev_auprc": 0.8172553850537803
+        },
+        {
+          "C": 1.0,
+          "dev_auroc": 0.8717662886796079,
+          "dev_auprc": 0.8172553850537803
+        },
+        {
+          "C": 10.0,
+          "dev_auroc": 0.8717662886796079,
+          "dev_auprc": 0.8172553850537803
+        }
+      ]
+    },
+    "m_o": {
+      "feature_names": [
+        "m",
+        "o"
+      ],
+      "selected_C": 0.01,
+      "dev_auroc": 0.8709014030367095,
+      "dev_auprc": 0.822640435972451,
+      "test_auroc": 0.868898508898509,
+      "test_auprc": 0.8349053027517381,
+      "candidates": [
+        {
+          "C": 0.01,
+          "dev_auroc": 0.8709014030367095,
+          "dev_auprc": 0.822640435972451
+        },
+        {
+          "C": 0.1,
+          "dev_auroc": 0.8718239477224679,
+          "dev_auprc": 0.8208782608274073
+        },
+        {
+          "C": 1.0,
+          "dev_auroc": 0.8716317509129349,
+          "dev_auprc": 0.8173569837708923
+        },
+        {
+          "C": 10.0,
+          "dev_auroc": 0.871708629636748,
+          "dev_auprc": 0.8174260084968923
+        }
+      ]
+    }
+  },
+  "output_margin_control": {
+    "dev_edges": {
+      "quintile": [
+        -0.9967158794403074,
+        5.631983269006014,
+        7.780764804780484,
+        9.256429739296436
+      ],
+      "tertile": [
+        4.482929106801748,
+        8.260343666188419
+      ]
+    },
+    "quintile_bins": [
+      {
+        "bin_index": 0,
+        "count": 91,
+        "fresh_count": 85,
+        "committed_count": 6,
+        "eligible": false,
+        "probe_auroc": null,
+        "combined_auroc": null,
+        "delta_auroc_probe_minus_combined": null
+      },
+      {
+        "bin_index": 1,
+        "count": 100,
+        "fresh_count": 71,
+        "committed_count": 29,
+        "eligible": true,
+        "probe_auroc": 0.8234666666666667,
+        "combined_auroc": 0.8133333333333334,
+        "delta_auroc_probe_minus_combined": 0.010133333333333328
+      },
+      {
+        "bin_index": 2,
+        "count": 89,
+        "fresh_count": 30,
+        "committed_count": 59,
+        "eligible": true,
+        "probe_auroc": 0.6809133489461358,
+        "combined_auroc": 0.49473067915690866,
+        "delta_auroc_probe_minus_combined": 0.1861826697892271
+      },
+      {
+        "bin_index": 3,
+        "count": 96,
+        "fresh_count": 18,
+        "committed_count": 78,
+        "eligible": false,
+        "probe_auroc": 0.52890625,
+        "combined_auroc": 0.41875,
+        "delta_auroc_probe_minus_combined": 0.11015625000000001
+      },
+      {
+        "bin_index": 4,
+        "count": 80,
+        "fresh_count": 20,
+        "committed_count": 60,
+        "eligible": false,
+        "probe_auroc": 0.7723076923076924,
+        "combined_auroc": 0.7282051282051283,
+        "delta_auroc_probe_minus_combined": 0.04410256410256408
+      }
+    ],
+    "tertile_bins": [
+      {
+        "bin_index": 0,
+        "count": 160,
+        "fresh_count": 141,
+        "committed_count": 19,
+        "eligible": false,
+        "probe_auroc": 0.6529605263157894,
+        "combined_auroc": 0.9013157894736842,
+        "delta_auroc_probe_minus_combined": -0.2483552631578948
+      },
+      {
+        "bin_index": 1,
+        "count": 146,
+        "fresh_count": 51,
+        "committed_count": 95,
+        "eligible": true,
+        "probe_auroc": 0.731060606060606,
+        "combined_auroc": 0.6241087344028521,
+        "delta_auroc_probe_minus_combined": 0.10695187165775388
+      },
+      {
+        "bin_index": 2,
+        "count": 150,
+        "fresh_count": 32,
+        "committed_count": 118,
+        "eligible": true,
+        "probe_auroc": 0.6528925619834711,
+        "combined_auroc": 0.5802222855514393,
+        "delta_auroc_probe_minus_combined": 0.07267027643203183
+      }
+    ],
+    "chosen_scheme": "tertile",
+    "chosen_bins": [
+      {
+        "bin_index": 1,
+        "count": 146,
+        "fresh_count": 51,
+        "committed_count": 95,
+        "eligible": true,
+        "probe_auroc": 0.731060606060606,
+        "combined_auroc": 0.6241087344028521,
+        "delta_auroc_probe_minus_combined": 0.10695187165775388
+      },
+      {
+        "bin_index": 2,
+        "count": 150,
+        "fresh_count": 32,
+        "committed_count": 118,
+        "eligible": true,
+        "probe_auroc": 0.6528925619834711,
+        "combined_auroc": 0.5802222855514393,
+        "delta_auroc_probe_minus_combined": 0.07267027643203183
+      }
+    ],
+    "central_bin_indices": [
+      1
+    ],
+    "central_bins_positive_delta": true,
+    "pooled_probe_auroc": 0.7082744640334173,
+    "pooled_combined_auroc": 0.6246083911788194,
+    "pooled_delta_auroc_probe_minus_combined": 0.08366607285459793,
+    "pooled_positive_delta": true,
+    "satisfies_mandatory_control": true
+  },
+  "commitment_separation_by_cell": [
+    {
+      "m": 1,
+      "k": 0,
+      "fresh_count": 6,
+      "committed_count": 6,
+      "eligible": false,
+      "fresh_mean_score": -0.9695159837777448,
+      "committed_mean_score": -0.9695159837777448,
+      "delta_mean_score": 0.0
+    },
+    {
+      "m": 1,
+      "k": 1,
+      "fresh_count": 20,
+      "committed_count": 23,
+      "eligible": false,
+      "fresh_mean_score": -0.643505029551041,
+      "committed_mean_score": 0.46188343037055785,
+      "delta_mean_score": 1.1053884599215988
+    },
+    {
+      "m": 1,
+      "k": 2,
+      "fresh_count": 31,
+      "committed_count": 34,
+      "eligible": true,
+      "fresh_mean_score": -0.5715295038464981,
+      "committed_mean_score": 0.39824913385906696,
+      "delta_mean_score": 0.969778637705565
+    },
+    {
+      "m": 2,
+      "k": 0,
+      "fresh_count": 18,
+      "committed_count": 18,
+      "eligible": false,
+      "fresh_mean_score": 1.3584339940074122,
+      "committed_mean_score": 1.3584339940074122,
+      "delta_mean_score": 0.0
+    },
+    {
+      "m": 2,
+      "k": 1,
+      "fresh_count": 18,
+      "committed_count": 24,
+      "eligible": false,
+      "fresh_mean_score": -1.546776559855453,
+      "committed_mean_score": 0.09757775151258975,
+      "delta_mean_score": 1.6443543113680428
+    },
+    {
+      "m": 2,
+      "k": 2,
+      "fresh_count": 33,
+      "committed_count": 30,
+      "eligible": true,
+      "fresh_mean_score": -1.5466330544901634,
+      "committed_mean_score": 0.9997722857328342,
+      "delta_mean_score": 2.5464053402229974
+    },
+    {
+      "m": 3,
+      "k": 0,
+      "fresh_count": 24,
+      "committed_count": 24,
+      "eligible": false,
+      "fresh_mean_score": 1.6205975644556443,
+      "committed_mean_score": 1.6205975644556443,
+      "delta_mean_score": 0.0
+    },
+    {
+      "m": 3,
+      "k": 1,
+      "fresh_count": 33,
+      "committed_count": 33,
+      "eligible": true,
+      "fresh_mean_score": -1.517388620473036,
+      "committed_mean_score": 1.0149862672238932,
+      "delta_mean_score": 2.532374887696929
+    },
+    {
+      "m": 3,
+      "k": 2,
+      "fresh_count": 41,
+      "committed_count": 40,
+      "eligible": true,
+      "fresh_mean_score": -2.4038714273469797,
+      "committed_mean_score": 1.0105453977250207,
+      "delta_mean_score": 3.414416825072
+    }
+  ],
+  "calibration_rows": [
+    {
+      "decile": 0,
+      "count": 45,
+      "mean_score": -3.7151895381761304,
+      "positive_rate": 0.06666666666666667,
+      "mean_B_cap": 0.7333333333333333
+    },
+    {
+      "decile": 1,
+      "count": 46,
+      "mean_score": -2.0916959097703307,
+      "positive_rate": 0.13043478260869565,
+      "mean_B_cap": 1.6521739130434783
+    },
+    {
+      "decile": 2,
+      "count": 45,
+      "mean_score": -1.2996096764711431,
+      "positive_rate": 0.35555555555555557,
+      "mean_B_cap": 2.8222222222222224
+    },
+    {
+      "decile": 3,
+      "count": 46,
+      "mean_score": -0.6374925753637657,
+      "positive_rate": 0.41304347826086957,
+      "mean_B_cap": 2.9782608695652173
+    },
+    {
+      "decile": 4,
+      "count": 46,
+      "mean_score": -0.16208364801571304,
+      "positive_rate": 0.5,
+      "mean_B_cap": 3.369565217391304
+    },
+    {
+      "decile": 5,
+      "count": 45,
+      "mean_score": 0.3662150298018544,
+      "positive_rate": 0.6,
+      "mean_B_cap": 4.355555555555555
+    },
+    {
+      "decile": 6,
+      "count": 46,
+      "mean_score": 0.7705803177524106,
+      "positive_rate": 0.6739130434782609,
+      "mean_B_cap": 4.3478260869565215
+    },
+    {
+      "decile": 7,
+      "count": 45,
+      "mean_score": 1.3068146131976783,
+      "positive_rate": 0.6666666666666666,
+      "mean_B_cap": 4.6
+    },
+    {
+      "decile": 8,
+      "count": 46,
+      "mean_score": 1.8436401938365428,
+      "positive_rate": 0.782608695652174,
+      "mean_B_cap": 5.326086956521739
+    },
+    {
+      "decile": 9,
+      "count": 46,
+      "mean_score": 3.271660219380173,
+      "positive_rate": 0.8695652173913043,
+      "mean_B_cap": 5.673913043478261
+    }
+  ]
+}

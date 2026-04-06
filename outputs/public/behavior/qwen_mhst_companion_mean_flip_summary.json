@@ -1,0 +1,92 @@
+{
+  "config": "E:\\Research\\revision_barriers_build_pack_clarified\\configs\\m7_qwen_behavior_companion.yaml",
+  "model_label": "qwen25_7b_mhst",
+  "split": "test",
+  "overall": {
+    "pair_count": 185,
+    "mean_deltaMeanFlip_pair": 0.3969111969111969,
+    "positive_count": 116,
+    "zero_count": 67,
+    "negative_count": 2,
+    "fresh_mean_flipability": 0.6857142857142857,
+    "committed_mean_flipability": 0.2888030888030888,
+    "delta_bootstrap": {
+      "mean": 0.3969111969111969,
+      "ci": {
+        "low": 0.342046332046332,
+        "high": 0.450965250965251
+      },
+      "n_pairs": 185
+    }
+  },
+  "S_lead": {
+    "pair_count": 113,
+    "mean_deltaMeanFlip_pair": 0.2642225031605563,
+    "positive_count": 52,
+    "zero_count": 59,
+    "negative_count": 2,
+    "fresh_mean_flipability": 0.49936788874841975,
+    "committed_mean_flipability": 0.23514538558786344,
+    "delta_bootstrap": {
+      "mean": 0.2642225031605563,
+      "ci": {
+        "low": 0.20347661188369154,
+        "high": 0.32999367888748415
+      },
+      "n_pairs": 113
+    }
+  },
+  "by_k": {
+    "0": {
+      "pair_count": 48,
+      "mean_deltaMeanFlip_pair": 0.0,
+      "positive_count": 0,
+      "zero_count": 48,
+      "negative_count": 0,
+      "fresh_mean_flipability": 0.2976190476190476,
+      "committed_mean_flipability": 0.2976190476190476,
+      "delta_bootstrap": {
+        "mean": 0.0,
+        "ci": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "n_pairs": 48
+      }
+    },
+    "1": {
+      "pair_count": 51,
+      "mean_deltaMeanFlip_pair": 0.38095238095238093,
+      "positive_count": 40,
+      "zero_count": 10,
+      "negative_count": 1,
+      "fresh_mean_flipability": 0.6778711484593837,
+      "committed_mean_flipability": 0.2969187675070028,
+      "delta_bootstrap": {
+        "mean": 0.38095238095238093,
+        "ci": {
+          "low": 0.2968487394957983,
+          "high": 0.47058823529411764
+        },
+        "n_pairs": 51
+      }
+    },
+    "2": {
+      "pair_count": 86,
+      "mean_deltaMeanFlip_pair": 0.627906976744186,
+      "positive_count": 76,
+      "zero_count": 9,
+      "negative_count": 1,
+      "fresh_mean_flipability": 0.9069767441860465,
+      "committed_mean_flipability": 0.27906976744186046,
+      "delta_bootstrap": {
+        "mean": 0.627906976744186,
+        "ci": {
+          "low": 0.5547757475083056,
+          "high": 0.7043189368770764
+        },
+        "n_pairs": 86
+      }
+    }
+  }
+}

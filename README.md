@@ -8,6 +8,10 @@ Canonical paper artifact in this repo:
 
 - `paper/revision_barriers.pdf`
 
+Curated public result artifacts:
+
+- `outputs/public/`
+
 ## Project summary
 This project studies a precise empirical phenomenon:
 
@@ -47,6 +51,7 @@ The target contribution is the **revision barrier** as a matched-history behavio
 - `src/analysis/`: barriers, probes, stats, plots
 - `scripts/`: runnable entrypoints
 - `paper/`: LaTeX paper source, figures, and the tracked paper PDF
+- `outputs/public/`: curated final summaries behind the paper's main quantitative claims
 
 ## Repo note
-Internal workflow memory, experimental outputs, and project-management docs are intentionally excluded from the public repo to keep the GitHub surface lean and paper-focused.
+Internal workflow memory, most generated experimental outputs, and project-management docs are intentionally excluded from the public repo to keep the GitHub surface lean and paper-focused. A curated subset of final public result artifacts is tracked under `outputs/public/`.

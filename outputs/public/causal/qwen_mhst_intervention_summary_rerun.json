@@ -1,0 +1,44 @@
+{
+  "run_id": "E5r2__qwen25_7b__mhst__intervention__seed0",
+  "config": "E:\\Research\\revision_barriers_build_pack_clarified\\configs\\intervention_qwen_mhst_rerun2.yaml",
+  "selected_layer": 21,
+  "selected_alpha": null,
+  "direction_source": "outputs/probes/E4r1__qwen25_7b__mhst__selected_probe__seed0.json",
+  "S_move_dev_count": 71,
+  "S_move_test_count": 68,
+  "delta_B_move_neg_alpha": null,
+  "delta_B_move_pos_alpha": null,
+  "delta_B_move_neg_alpha_ci": null,
+  "delta_B_move_pos_alpha_ci": null,
+  "random_control_summary": null,
+  "side_effect_summary": {
+    "neg_alpha": null,
+    "pos_alpha": null
+  },
+  "underpowered": false,
+  "c4_assessment": "unsupported",
+  "compatibility_fingerprint": {
+    "selected_probe_sha256": "add3a8d42a06d6624b07e2b419ec2d95c92033aa14c3f5b61395172e509de834",
+    "s_move_dev_sha256": "c9801e81be6117387b10593e0de9f603dc4d8e756832ec69f99093be030aba9d",
+    "s_move_test_sha256": "82fb547dcf4838f5b3804040dee107fe3f26c47e9d32eb02c2789f9514108618",
+    "random_control_sha256": "d3c9f1ea942af51028d86efce072812df738f2e0ab20c65d69c4ccb627cb4cea",
+    "model_revision": "Qwen/Qwen2.5-7B-Instruct",
+    "tokenizer_revision": "Qwen/Qwen2.5-7B-Instruct",
+    "alpha_grid": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "control_set_sha256": "17820fd551dd989cf8bc4e70d339cb3f0413a9c52967f98968fae9fe90210ad6",
+    "scoring_prompt_config_sha256": "1d5a77c619a1b1486a18c3d4fad686d144e9ad7d505fbfd4bceecc516f8b22c3",
+    "source_file_sha256": {
+      "scripts/run_intervention.py": "e69be4c4886f82d888c5d51abe2fcdd54e5c9bb40649a58e0d93ae3e62d91639",
+      "src/models/hooks.py": "b906d0815eb4f3180b9a09d497bc49ee688d97fc33ffe780b6fee5d96fe770d4",
+      "src/analysis/intervention_eval.py": "58c26bb62df591782ebe7e3d3066770900c26633b6414bd8e0e8c2a0a69c1a82",
+      "src/data/mhst_prompts.py": "4deeb4a3e469893a5541b6ead7366436604515afc1239dfd663bbfbde9a834d9",
+      "src/analysis/barriers.py": "aa6bd4327684fabeafd103db33e291d6d8f4a2242cbeb7847e669d1c909deef1",
+      "src/models/option_scoring.py": "68cd0f3eb17d9d62139f611cb1ef20172ff8a07aaaedd4cd9682f4a9c54620c2"
+    }
+  }
+}

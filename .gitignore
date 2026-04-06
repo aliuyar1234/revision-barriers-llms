@@ -1,5 +1,8 @@
 # Research outputs and workflow state
-outputs/
+# Outputs are ignored by default; a small curated public subset is tracked.
+outputs/*
+!outputs/public/
+!outputs/public/**
 .omx/
 .miktex-local/
 AGENTS.md

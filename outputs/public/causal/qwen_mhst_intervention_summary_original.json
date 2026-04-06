@@ -1,0 +1,36 @@
+{
+  "run_id": "E5__qwen25_7b__mhst__intervention__seed0",
+  "config": "E:\\Research\\revision_barriers_build_pack_clarified\\configs\\intervention_qwen_mhst.yaml",
+  "selected_layer": 24,
+  "selected_alpha": null,
+  "direction_source": "outputs/probes/E4__qwen25_7b__mhst__selected_probe__seed0.json",
+  "S_move_dev_count": 71,
+  "S_move_test_count": 68,
+  "delta_B_move_neg_alpha": null,
+  "delta_B_move_pos_alpha": null,
+  "delta_B_move_neg_alpha_ci": null,
+  "delta_B_move_pos_alpha_ci": null,
+  "random_control_summary": null,
+  "side_effect_summary": {
+    "neg_alpha": null,
+    "pos_alpha": null
+  },
+  "underpowered": false,
+  "c4_assessment": "unsupported",
+  "compatibility_fingerprint": {
+    "selected_probe_sha256": "e45860c619a95e31425409132985c17c878b20087f2acd15583873c3b71151cc",
+    "s_move_dev_sha256": "c9801e81be6117387b10593e0de9f603dc4d8e756832ec69f99093be030aba9d",
+    "s_move_test_sha256": "82fb547dcf4838f5b3804040dee107fe3f26c47e9d32eb02c2789f9514108618",
+    "random_control_sha256": "d3c9f1ea942af51028d86efce072812df738f2e0ab20c65d69c4ccb627cb4cea",
+    "model_revision": "Qwen/Qwen2.5-7B-Instruct",
+    "tokenizer_revision": "Qwen/Qwen2.5-7B-Instruct",
+    "alpha_grid": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "control_set_sha256": "17820fd551dd989cf8bc4e70d339cb3f0413a9c52967f98968fae9fe90210ad6",
+    "scoring_prompt_config_sha256": "b3198d62195cf74fbdb790a73bfdcfce633856eeba7a7205a3613b6d438edebb"
+  }
+}
